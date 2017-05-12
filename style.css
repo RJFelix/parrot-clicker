@@ -179,3 +179,53 @@ body {
 }
 
 /* end squawk button module */
+
+/* modal module */
+
+/* positioning technique from:
+   http://lynn.io/2014/02/22/modalin/
+*/
+
+.modal {
+  background-color: #cccccc;
+  border-radius: 10px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 3;
+  padding: 20px;
+  border: 2px solid #222222;
+  box-shadow: 0px 0px 8px rgba(0,0,0,0.7);
+  text-align: center;
+}
+
+.modal > div {
+  margin-top: 15px;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.modal > div > button {
+  width: 40%;
+}
+
+.modal-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: block;
+  height: 100vh;
+  width: 100vw;
+  background-color: rgba(0,0,0,0.5);
+  z-index: 2;
+}
+
+@media only screen and (max-width: 800px) {
+  .modal {
+    width: calc(100% - 100px);
+  }
+}
+
+/* end modal module */
