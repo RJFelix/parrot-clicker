@@ -72,6 +72,40 @@ function Game() {
     }
   }
 
+  this.prevState = {
+    squawks: 0,
+    parrotCounts: {
+      budgie: 0,
+      conure: 0,
+      caique: 0,
+      rosella: 0,
+      cockatiel: 0,
+      amazon: 0,
+      eclectus: 0,
+      cockatoo: 0
+    },
+    parrotCosts: {
+      budgie: 10,
+      conure: 100,
+      caique: 450,
+      rosella: 2000,
+      cockatiel: 10000,
+      amazon: 50000,
+      eclectus: 300000,
+      cockatoo: 1400000
+    },
+    parrotRates: {
+      budgie: 1,
+      conure: 5,
+      caique: 20,
+      rosella: 100,
+      cockatiel: 450,
+      amazon: 1200,
+      eclectus: 8000,
+      cockatoo: 25000
+    }
+  }
+
   this.refs = {
     squawks: document.getElementById("squawkCount"),
     parrotDivs: {
@@ -168,16 +202,30 @@ function Game() {
   }
 
   this.paint = () => {
-    this.refs.squawks.innerHTML = formatNumber(this.state.squawks);
+    // compare each value in current state to previous state
+    // and only update the DOM for values that have changed
+    if(this.state.squawks !== this.prevState.squawks) {
+      this.refs.squawks.innerHTML = formatNumber(this.state.squawks);
+      this.prevState.squawks = this.state.squawks;
+    }
     for(let parrot in this.state.parrotCounts) {
       if(this.state.squawks < this.state.parrotCosts[parrot]) {
         this.refs.parrotDivs[parrot].classList.add("is-too-expensive");
       } else if(this.refs.parrotDivs[parrot].classList.contains("is-too-expensive")) {
         this.refs.parrotDivs[parrot].classList.remove("is-too-expensive");
+      } 
+      if(this.state.parrotCounts[parrot] !== this.prevState.parrotCounts[parrot]) {
+        this.refs.parrotCounts[parrot].innerHTML = formatNumber(this.state.parrotCounts[parrot]);
+        this.prevState.parrotCounts[parrot] = this.state.parrotCounts[parrot];
       }
-      this.refs.parrotCounts[parrot].innerHTML = formatNumber(this.state.parrotCounts[parrot]);
-      this.refs.parrotCosts[parrot].innerHTML = formatNumber(this.state.parrotCosts[parrot]);
-      this.refs.parrotRates[parrot].innerHTML = formatNumber(this.state.parrotRates[parrot]);
+      if(this.state.parrotCosts[parrot] !== this.prevState.parrotCosts[parrot]) {
+        this.refs.parrotCosts[parrot].innerHTML = formatNumber(this.state.parrotCosts[parrot]);
+        this.prevState.parrotCosts[parrot] = this.state.parrotCosts[parrot];
+      }
+      if(this.state.parrotRates[parrot] !== this.prevState.parrotRates[parrot]) {
+        this.refs.parrotRates[parrot].innerHTML = formatNumber(this.state.parrotRates[parrot]);
+        this.prevState.parrotRates[parrot] = this.state.parrotRates[parrot];
+      }
     }
   }
 
