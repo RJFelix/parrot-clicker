@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Parrot Clicker</title>
+    <meta name="author" content="Ryan Felix">
+    <meta name="description" content="Incremental game about parrots. Demo app for admission into Code 301.">
+    <link rel="stylesheet" type="text/css" href="style.css">
+  </head>
+  <body>
+    <div class="container">
+      <h1>Parrot Clicker</h1>
+      <hr>
+      <p>Squawks: <span id="squawkCount">0</span></p>
+      <div class="row">
+        <div class="col-1-4 parrot" id="budgie" onclick="parrotClick('budgie')">
+          <div class="parrot-img">
+            <img src="./assets/budgie_closeup-TS-514318394.jpg">
+          </div>
+          <h3>Budgie</h3>
+          <p>You have <span id="budgieCount">none</span></p>
+          <p>Cost: <span id="budgieCost">10</span> squawks</p>
+          <p><span id="budgieRate">1</span> squawk/second</p>
+        </div>
+        <div class="col-1-4 parrot" id="conure" onclick="parrotClick('conure')">
+          <div class="parrot-img">
+            <img src="./assets/Green-Cheeked-Conure.jpg">
+          </div>
+          <h3>Conure</h3>
+          <p>You have <span id="conureCount">none</span></p>
+          <p>Cost: <span id="conureCost">100</span> squawks</p>
+          <p><span id="conureRate">5</span> squawks/second</p>
+        </div>
+        <div class="col-1-4 parrot" id="caique" onclick="parrotClick('caique')">
+          <div class="parrot-img">
+            <img src="./assets/caiquecomeplaywithme.jpg">
+          </div>
+          <h3>Caique</h3>
+          <p>You have <span id="caiqueCount">none</span></p>
+          <p>Cost: <span id="caiqueCost">450</span> squawks</p>
+          <p><span id="caiqueRate">20</span> squawks/second</p>
+        </div>
+        <div class="col-1-4 parrot" id="rosella" onclick="parrotClick('rosella')">
+          <div class="parrot-img">
+            <img src="./assets/eastern-rosella091021_6579.jpg">
+          </div>
+          <h3>Rosella</h3>
+          <p>You have <span id="rosellaCount">none</span></p>
+          <p>Cost: <span id="rosellaCost">2000</span> squawks</p>
+          <p><span id="rosellaRate">100</span> squawks/second</p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-1-4 parrot" id="cockatiel" onclick="parrotClick('cockatiel')">
+          <div class="parrot-img">
+            <img src="./assets/cockatiel_care.jpg">
+          </div>
+          <h3>Cockatiel</h3>
+          <p>You have <span id="cockatielCount">none</span></p>
+          <p>Cost: <span id="cockatielCost">10000</span> squawks</p>
+          <p><span id="cockatielRate">450</span> squawks/second</p>
+        </div>
+        <div class="col-1-4 parrot" id="amazon" onclick="parrotClick('amazon')">
+          <div class="parrot-img">
+            <img src="./assets/lilacine-amazon-parrot-02.jpg">
+          </div>
+          <h3>Amazon</h3>
+          <p>You have <span id="amazonCount">none</span></p>
+          <p>Cost: <span id="amazonCost">50000</span> squawks</p>
+          <p><span id="amazonRate">1200</span> squawks/second</p>
+        </div>
+        <div class="col-1-4 parrot" id="eclectus" onclick="parrotClick('eclectus')">
+          <div class="parrot-img">
+            <img src="./assets/eclectus-parrot-2.jpg">
+          </div>
+          <h3>Eclectus</h3>
+          <p>You have <span id="eclectusCount">none</span></p>
+          <p>Cost: <span id="eclectusCost">300000</span> squawks</p>
+          <p><span id="eclectusRate">8000</span> squawks/second</p>
+        </div>
+        <div class="col-1-4 parrot" id="cockatoo" onclick="parrotClick('cockatoo')">
+          <div class="parrot-img">
+            <img src="./assets/profile_162_600.jpg">
+          </div>
+          <h3>Cockatoo</h3>
+          <p>You have <span id="cockatooCount">none</span></p>
+          <p>Cost: <span id="cockatooCost">1400000</span> squawks</p>
+          <p><span id="cockatooRate">25000</span> squawks/second</p>
+        </div>
+      </div>
+      <div>
+        <button id="squawkButton" onclick="squawkClick()">Squawk!</button>
+      </div>
+      <div>
+        <button onclick="restartClick()">Restart Game</button>
+      </div>
+    </div>
+    <script type="text/javascript" src="src/game.js"></script>
+  </body>
+</html>
