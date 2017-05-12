@@ -106,7 +106,7 @@ body {
   user-select: none;
 }
 
-.is-too-expensive > .parrot-img > img {
+.is-too-expensive img {
   /* greyscale overlay borrowed from StackOverflow:
      http://stackoverflow.com/questions/7273927/image-greyscale-with-css-re-color-on-mouse-over
   */
