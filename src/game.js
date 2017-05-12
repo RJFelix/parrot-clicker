@@ -204,6 +204,9 @@ function Game() {
   this.paint = () => {
     // compare each value in current state to previous state
     // and only update the DOM for values that have changed
+    // NOTE: this requires the values in HTML to match the 
+    // correct default values, as they will not be overwritten
+    // until they change from the default!
     if(this.state.squawks !== this.prevState.squawks) {
       this.refs.squawks.innerHTML = formatNumber(this.state.squawks);
       this.prevState.squawks = this.state.squawks;
