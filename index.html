@@ -9,9 +9,8 @@
   </head>
   <body>
     <div class="container">
-      <h1>Parrot Clicker</h1>
-      <hr>
-      <p>Squawks: <span id="squawkCount">0</span></p>
+      <h1 id="title">Parrot Clicker</h1>
+      <p id="squawkText">Squawks: <span id="squawkCount">0</span></p>
       <div class="row">
         <div class="col-1-4 parrot" id="budgie" onclick="parrotClick('budgie')">
           <div class="parrot-img">
@@ -88,8 +87,8 @@
           <p><span id="cockatooRate">25000</span> squawks/second</p>
         </div>
       </div>
-      <div>
-        <button id="squawkButton" onclick="squawkClick()">Squawk!</button>
+      <div class="row">
+        <button class="col-1" id="squawkButton" onclick="squawkClick()">Squawk!</button>
       </div>
       <div>
         <button onclick="restartClick()">Restart Game</button>

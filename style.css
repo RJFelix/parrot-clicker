@@ -11,7 +11,27 @@ body {
 .row {
   display: flex;
   justify-content: space-between;
-  padding-top: 12px;
+}
+
+/* column with small gutter */
+.col-1-4 {
+  width: 23%;
+  margin-top: 25px;
+}
+
+/* full width column */
+.col-1 {
+  width: 100%;
+}
+
+@media only screen and (max-width: 1200px) {
+  .row {
+    flex-wrap: wrap;
+  }
+
+  .col-1-4 {
+    width: 48%;
+  }
 }
 
 @media only screen and (max-width: 800px) {
@@ -20,11 +40,8 @@ body {
   }
   .col-1-4 {
     width: 100%;
+    margin-top: 12px;
   }
-}
-
-.col-1-4 {
-  width: 23%;
 }
 
 /* end simple grid */
@@ -39,6 +56,12 @@ body {
   margin: 0 auto;
 }
 
+@media only screen and (max-width: 1200px) {
+  .container {
+    margin: 0 10%;
+  }
+}
+
 @media only screen and (max-width: 800px) {
   .container {
     margin: 0;
@@ -46,6 +69,19 @@ body {
 }
 
 /* end top level container */
+
+/* general styles */
+
+#title {
+  text-align: center;
+  color: green;
+  margin: 1.0em auto; 
+}
+
+#squawkText {
+  text-align: center;
+  font-size: 1.5em;
+}
 
 /* parrot module */
 
@@ -97,6 +133,10 @@ body {
   box-shadow: 0px 0px 8px rgba(0,0,0,0.9);
 }
 
+.parrot:not(.is-too-expensive):active {
+  box-shadow: 0px 0px 8px rgba(0,0,0,0.5) inset;
+}
+
 .parrot {
   padding-top: 8px;
   padding-bottom: 8px;
@@ -115,4 +155,27 @@ body {
   color: #555555;
 }
 
+@media only screen and (max-width: 1200px) {
+  .parrot > h3, .parrot > p {
+    font-size: 75%;
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  .parrot-img {
+    width: 100%;
+  }
+}
+
 /* end parrot module */
+
+/* squawk button module */
+
+#squawkButton {
+  height: 100px;
+  margin: 20px auto;
+  font-size: 1.75em;
+  color: green;
+}
+
+/* end squawk button module */
