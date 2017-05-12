@@ -34,7 +34,7 @@ function Game() {
     if(number < 1000000000000000) {
       return `${(number / 1000000000000).toFixed(2)} trillion`;
     } else {
-      return "A huge number!";
+      return "A lot!";
     }
   }
 
